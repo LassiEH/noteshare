@@ -2,8 +2,8 @@ import Note from "../models/Note";
 
 // Create mock notes to add to simulate backend storage
 let mockNotes: Note[] = [
-  new Note("Wahoo", 1),
-  new Note("Wahoo part 2", 2),
+  new Note("Wahoo", '1'),
+  new Note("Wahoo part 2", '2'),
 ];
 
 export const mockApi = {
@@ -18,7 +18,7 @@ export const mockApi = {
     return newNote;
   },
 
-  deleteNote: async (id: number): Promise<void> => {
+  deleteNote: async (id: string): Promise<void> => {
     mockNotes = mockNotes.filter(n => n.id !== id);
   }
 };

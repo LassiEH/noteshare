@@ -2,7 +2,7 @@ import Note from "../models/Note";
 
 interface Props {
   notes: Note[];
-  onDelete: (id: number) => void;
+  onDelete: (id: string) => void;
 }
 
 const NoteList = ({ notes, onDelete }: Props) => {

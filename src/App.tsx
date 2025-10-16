@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import Note from "./models/Note"
+import { api } from "../api/api"
 import NoteList from "./components/NoteList"
 
-import { mockApi } from './mocks/mockNotes'
+//import { mockApi } from './mocks/mockNotes'
 
 import './App.css'
 
@@ -11,18 +12,18 @@ const App = () => {
   const [newNote, setNewNote] = useState("");
 
   const fetchNotes = async () => {
-    const data = await mockApi.getNotes();
+    const data = await api.getNotes();
     setNotes(data);
   };
 
-  const deleteNote = async (id: number) => {
-    await mockApi.deleteNote(id);
+  const deleteNote = async (id: string) => {
+    await api.deleteNote(id);
     fetchNotes();
   };
 
   const addNote = async () => {
     if (!newNote.trim()) return;
-    await mockApi.addNote(newNote);
+    await api.addNote(newNote);
     setNewNote("");
     fetchNotes();
   };
