@@ -16,5 +16,9 @@ export const mockApi = {
     const newNote = new Note(content);
     mockNotes.push(newNote);
     return newNote;
+  },
+
+  deleteNote: async (id: number): Promise<void> => {
+    mockNotes = mockNotes.filter(n => n.id !== id);
   }
 };

@@ -16,7 +16,8 @@ const App = () => {
   };
 
   const deleteNote = async (id: number) => {
-    console.log(id)
+    await mockApi.deleteNote(id);
+    fetchNotes();
   };
 
   const addNote = async () => {
@@ -24,7 +25,7 @@ const App = () => {
     await mockApi.addNote(newNote);
     setNewNote("");
     fetchNotes();
-  }
+  };
 
   useEffect(() => {
     fetchNotes();
