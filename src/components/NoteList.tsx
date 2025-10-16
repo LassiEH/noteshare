@@ -11,7 +11,7 @@ const NoteList = ({ notes, onDelete }: Props) => {
       {notes.map(note => (
         <li key={note.id}>
           {note.content}
-          <button onClick={() => onDelete(note.id)}>Delete</button>
+          <button className="deleteButton" onClick={() => onDelete(note.id)}>Delete</button>
         </li>
       ))}
     </ul>

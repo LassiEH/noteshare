@@ -46,6 +46,11 @@ button {
 button:hover {
   border-color: #fc24bb;
 }
+
+button.deleteButton {
+  background-color: #d37474;
+}
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
