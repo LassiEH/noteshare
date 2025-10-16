@@ -19,6 +19,13 @@ const App = () => {
     console.log(id)
   };
 
+  const addNote = async () => {
+    if (!newNote.trim()) return;
+    await mockApi.addNote(newNote);
+    setNewNote("");
+    fetchNotes();
+  }
+
   useEffect(() => {
     fetchNotes();
   }, []);
@@ -32,7 +39,7 @@ const App = () => {
           value={newNote}
           onChange={(e) => setNewNote(e.target.value)}
         />
-        <button>
+        <button onClick={addNote}>
           Add
         </button>
       </div>
