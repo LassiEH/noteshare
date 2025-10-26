@@ -1,4 +1,4 @@
-import Note from "./Note";
+import Note from "./src/models/Note";
 
 export const api = {
   getNotes: async (): Promise<Note[]> => {
