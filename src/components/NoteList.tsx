@@ -2,7 +2,7 @@ import Note from "../models/Note";
 
 interface Props {
   notes: Note[];
-  onDelete: (id: number) => void;
+  onDelete: (id: string) => void;
 }
 
 const NoteList = ({ notes, onDelete }: Props) => {
@@ -11,7 +11,7 @@ const NoteList = ({ notes, onDelete }: Props) => {
       {notes.map(note => (
         <li key={note.id}>
           {note.content}
-          <button onClick={() => onDelete(note.id)}>Delete</button>
+          <button className="deleteButton" onClick={() => onDelete(note.id)}>Delete</button>
         </li>
       ))}
     </ul>
